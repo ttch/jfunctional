@@ -1,12 +1,10 @@
 package functional.tools;
 
-import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.Stack;
 import java.util.TreeMap;
 
 @SuppressWarnings("unchecked")
@@ -46,7 +44,6 @@ public class f {
 	}
 	private static <T> T[] pack( Class<?> [] tp, T...objects ){
 		 T [] t = (T[]) new Object[1];
-		ArrayList<T> a = new ArrayList<T>();
 		if ( (tp.length == 1) && (objects.length>1) ){
 			t[0] = (T) Arrays.asList(objects).toArray();
 			return t;
@@ -121,27 +118,6 @@ public class f {
 		if (execabled == true)
 			return (T) f.invoke(lm,null,para);
 		return null;
-	}
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-
-		double b = f.reduce(Math.class,"max",1,3);
-		System.out.println(b);
-		
-		Double a = f.reduce(Math.class,"abs",-2.2);
-		System.out.println(a);
-
-		List<Integer> x = Arrays.asList(1,2,3,4,5,6,7);
-		
-		Integer c = (Integer) f.reduce(operator.class, "add", x.toArray());
-		System.out.println(c);
-
-		Integer d = (Integer) f.reduce(operator.class, "mul",x.toArray(),2);
-		System.out.println(d);
-
-
 	}
 
 }
