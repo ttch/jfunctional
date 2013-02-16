@@ -8,10 +8,8 @@ import functional.tools.operator;
 
 public class demo1 {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
+		
 		double b = f.reduce(Math.class,"max",1,3);
 		System.out.println(b);
 		
@@ -25,6 +23,11 @@ public class demo1 {
 
 		Integer d = (Integer) f.reduce(operator.class, "mul",x.toArray(),2);
 		System.out.println(d);
+		
+		List<String> strs = Arrays.asList("1","hello","test","nihao");
+		
+		String r = (String) f.reduce(operator.class, "concat", strs.toArray());
+		System.out.println(r);
 
 	}
 

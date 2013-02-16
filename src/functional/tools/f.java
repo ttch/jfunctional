@@ -40,8 +40,8 @@ public class f {
 			}
 		}
 		return true;
-		
 	}
+	
 	private static <T> T[] pack( Class<?> [] tp, T...objects ){
 		 T [] t = (T[]) new Object[1];
 		if ( (tp.length == 1) && (objects.length>1) ){
@@ -52,8 +52,7 @@ public class f {
 		return (T[]) objects;
 	}
 	
-	private static TreeMap<String,String> PrimToRef = new TreeMap(){
-
+	private final static TreeMap<String,String> PrimToRef = new TreeMap(){
 	{
 		put( "int","Integer" );
 		put( "char","Character" );
@@ -72,7 +71,8 @@ public class f {
 		}
 		return null;
 	}
-	public static<T> ArrayList<Class> getClassList(T...objects){
+	
+	private static<T> ArrayList<Class> getClassList(T...objects){
 		ArrayList<Class> l = new ArrayList<Class>();
 		for (T a : objects){
 			l.add(a.getClass());
@@ -80,7 +80,8 @@ public class f {
 		return l;
 		
 	}
-	public static String pToR(String name){
+	
+	private static String pToR(String name){
 		return ( PrimToRef.get(name) == null ? name : PrimToRef.get(name).toLowerCase() );
 	}
 	

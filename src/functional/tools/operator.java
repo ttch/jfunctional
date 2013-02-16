@@ -57,5 +57,13 @@ public class operator {
 		}
 		return r;
 	}
+	
+	public static String concat(String []s){
+		String r = "";
+		for (String a : s){
+			r = r + a; 
+		}
+		return r;
+	}
 
 }
