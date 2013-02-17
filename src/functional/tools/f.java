@@ -4,6 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 import java.util.TreeMap;
 
@@ -119,6 +120,16 @@ public class f {
 		if (execabled == true)
 			return (T) f.invoke(lm,null,para);
 		return null;
+	}
+	
+	public static <T> void loop(function lambdaf,T...ls){
+		for ( T x : ls ){
+			if ( x instanceof Collection ){
+				for ( Object y : (Collection) x  ){
+					lambdaf.lambda(  (T) y  ); }
+				
+			}else { lambdaf.lambda(  x  ); }
+		}
 	}
 
 }

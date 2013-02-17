@@ -1,6 +1,14 @@
 package functional.tools;
 
+import java.util.Arrays;
+
 public class operator {
+	
+	public static Integer max(Integer[] is){
+		Arrays.sort(is);
+		return is[is.length-1];
+	}
+	
 	public static Integer add(Integer[] is){
 		Integer result = 0;
 		for (Integer a : is ){
@@ -29,6 +37,7 @@ public class operator {
 		}
 		return result;
 	}
+	
 	public static Integer mul(Integer[] s , Integer d){
 		Integer r = d;
 		for ( Integer a : s){
